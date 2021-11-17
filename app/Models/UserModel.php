@@ -10,10 +10,10 @@ class UserModel extends Model
     use HasFactory;
     protected $table = 'test_user';
 
-    public function resolveRouteBinding($value, $field = null)
-    {
-        return $this->where('name', $value)->firstOrFail();
-    }
+    // public function resolveRouteBinding($value, $field = null)
+    // {
+    //     return $this->where('name', $value)->firstOrFail();
+    // }
 
 
 }

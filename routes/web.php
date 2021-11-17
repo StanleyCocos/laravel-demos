@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/', function () {
-    return 'demo';
+    return '这里是根目录首页';
 });
 
 // 基础路由
@@ -221,13 +221,13 @@ Route::get('test4_user/{user}', function(UserModel $user){
 
 
 // 默认路由 当找不到路由时 会进入到这里
-Route::fallback(function (Request $request) {
-    return response()->json([  
-        'message' => '未找到路由哦', 
-        'url' => $request->url(),
-        'd' => $request->all(),
-    ]);
-});
+// Route::fallback(function (Request $request) {
+//     return response()->json([  
+//         'message' => '未找到路由哦', 
+//         'url' => $request->url(),
+//         'd' => $request->all(),
+//     ]);
+// });
 
 /**************************************************************************/
 
@@ -641,3 +641,31 @@ Route::get('/session9', function(){
     session()->keep(['status']);
     return session()->all();
 });
+
+Route::delete('/session10', function(Request $request){
+    $request->session()->invalidate();
+    return '清除所有session';
+});
+
+
+
+/**************************************************************************/
+Route::resource('/test_validate1', Controllers\ValidateController::class);
+Route::get('/test_validate2', [Controllers\Test14Controller::class, 'test4']);
+Route::match(['get', 'post'], '/test_validate3', [Controllers\Test14Controller::class, 'test5']);
+Route::get('/test_validate4', [Controllers\Test14Controller::class, 'test6']);
+Route::post('/test_validate5', [Controllers\Test14Controller::class, 'test7']);
+Route::post('/test_validate6', [Controllers\Test14Controller::class, 'test8']);
+Route::post('/test_validate7', [Controllers\Test14Controller::class, 'test9']);
+Route::post('/test_validate8', [Controllers\Test14Controller::class, 'test10']);
+Route::post('/test_validate9', [Controllers\Test14Controller::class, 'test11']);
+Route::post('/test_validate10', [Controllers\Test14Controller::class, 'test12']);
+Route::post('/test_validate11', [Controllers\Test14Controller::class, 'test13']);
+Route::post('/test_validate12', [Controllers\Test14Controller::class, 'test14']);
+Route::post('/test_validate13', [Controllers\Test14Controller::class, 'test15']);
+Route::post('/test_validate14', [Controllers\Test14Controller::class, 'test16']);
+Route::post('/test_validate15', [Controllers\Test14Controller::class, 'test17']);
+Route::post('/test_validate16', [Controllers\Test14Controller::class, 'test18']);
+// Route::any('/test_validate1', [Controllers\Test14Controller::class, 'test1']);
+// Route::any('/test_validate2', [Controllers\Test14Controller::class, 'test2']);
+// Route::get('/test_validate3', [Controllers\Test14Controller::class, 'test3']);
