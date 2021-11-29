@@ -669,3 +669,24 @@ Route::post('/test_validate16', [Controllers\Test14Controller::class, 'test18'])
 // Route::any('/test_validate1', [Controllers\Test14Controller::class, 'test1']);
 // Route::any('/test_validate2', [Controllers\Test14Controller::class, 'test2']);
 // Route::get('/test_validate3', [Controllers\Test14Controller::class, 'test3']);
+
+
+
+/**************************************************************************/
+// debug 日志
+Route::get('/test_log1', [Controllers\Test15Controller::class, 'test1']);
+// emergency 日志
+Route::get('/test_log2', [Controllers\Test15Controller::class, 'test2']);
+// alert 日志
+Route::get('/test_log3', [Controllers\Test15Controller::class, 'test3']);
+// critical 日志
+Route::get('/test_log4', [Controllers\Test15Controller::class, 'test4']);
+// error 日志
+Route::get('/test_log5', [Controllers\Test15Controller::class, 'test5']);
+// warning 日志
+Route::get('/test_log6', [Controllers\Test15Controller::class, 'test6']);
+// notice 日志
+Route::get('/test_log7', [Controllers\Test15Controller::class, 'test7']);
+// info 日志
+Route::get('/test_log8', [Controllers\Test15Controller::class, 'test8']);
+
