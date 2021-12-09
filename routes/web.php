@@ -690,3 +690,26 @@ Route::get('/test_log7', [Controllers\Test15Controller::class, 'test7']);
 // info 日志
 Route::get('/test_log8', [Controllers\Test15Controller::class, 'test8']);
 
+
+
+/**************************************************************************/
+// 缓存
+
+// file-设置缓存
+Route::post('/cache1', [Controllers\Test16Controller::class, 'test_cache1']);
+// file-获取缓存
+Route::get('/cache2', [Controllers\Test16Controller::class, 'test_cache2']);
+// database-设置缓存
+Route::post('/cache3', [Controllers\Test16Controller::class, 'test_cache3']);
+// database-获取缓存
+Route::get('/cache4', [Controllers\Test16Controller::class, 'test_cache4']);
+// 设置默认存储缓存驱动
+Route::post('/cache5', [Controllers\Test16Controller::class, 'test_cache5']);
+// 获取不到 默认值
+Route::get('/cache6', [Controllers\Test16Controller::class, 'test_cache6']);
+// 设置缓存时间
+Route::post('/cache7', [Controllers\Test16Controller::class, 'test_cache7']);
+// 删除数据
+Route::delete('/cache8', [Controllers\Test16Controller::class, 'test_cache8']);
+// 清空数据
+Route::delete('/cache9', [Controllers\Test16Controller::class, 'test_cache9']);
