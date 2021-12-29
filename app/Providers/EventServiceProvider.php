@@ -18,6 +18,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Events\OrderShipped' => [
+            'App\Listeners\SendShipmentNotification',
+        ],
+        'App\Events\ImageView' => [
+            'App\Listeners\ImageViewNotification',
+        ],
     ];
 
     /**
